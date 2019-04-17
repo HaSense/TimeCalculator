@@ -6,7 +6,20 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 public class TimeTalbeTest {
-
+	
+	/*
+	 * 2019.04.16
+	 * 
+	 * 그동안 율리우스력에 의해 누적된 오차를 그레고리력으로 바꾸며서 사라진 10일과 같이 역사적으로 이슈가
+	 * 반영되지 않아 날짜 계산에 오차가 있었습니다. 
+	 * Java8이 표준이 되면서 이러한 문제를 해결한 클래스가 등장하였고 LocalDate, LocalTime, LocalDateTime
+	 * 클래스 입니다. 이를 사용하여 날짜계산를 보다 편하고 정확하게 할 수 있게 되었습니다.
+	 * 
+	 * 하지만 사용해보고 연습해 보아야 코드를 내것으로 할 수 있습니다. 
+	 * 그래서 완벽한 코드보다 중간 연습 과정의 코드도 남겨 둡니다.
+	 * 
+	 */
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int class1Time = 40;
