@@ -1,5 +1,9 @@
 package com.fourirsw.common;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+
 public class TimeCalculrator {
 	
 	/*
@@ -24,4 +28,60 @@ public class TimeCalculrator {
 		}
 		return yoil;
 	}
+	//날짜 카운트 함수, 평일만
+	public int countDays() {
+		LocalDate startDay = LocalDate.of(2019, 1, 1);
+		LocalDate endDay = LocalDate.of(2019, 1, 8);
+		
+		int cnt=0;
+		int i=0;
+		LocalDate countDay = startDay;
+		DateTimeFormatter yoil_format = DateTimeFormatter.ofPattern("E", Locale.KOREAN);
+		
+		while(true) {
+			countDay = startDay.plusDays(i++);
+			String yoil = countDay.format(yoil_format);
+			if(yoil.equals("SATURDAY") || yoil.equals("SUNDAY")) {
+			}else {
+				cnt++;
+				System.out.println(countDay + "(" + yoil + ")");
+			}
+			if(countDay.equals(endDay) ) break;
+		}	
+		System.out.println("cnt : " + cnt);
+		
+		return cnt;
+	}
+	
+	public void countDays2() {
+		/*
+		 * 미완성 중임.
+		 * 1. 공휴일 제거 기능이 들어가야 하고
+		 * 2. 1교시 부터 시작하지 않을 시 버그가 있음
+		 * 3. 
+		 */
+		int classTotalTime = 80;
+		int classTime = 7;
+		
+		LocalDate startDay = LocalDate.of(2019, 8, 5);
+
+		int cnt=0;
+		int i=0;
+		LocalDate countDay = startDay;
+		DateTimeFormatter yoil_format = DateTimeFormatter.ofPattern("E", Locale.KOREAN);
+
+		while(true) {
+			countDay = startDay.plusDays(i++);
+			String yoil = countDay.format(yoil_format);
+			if(yoil.equals("토") || yoil.equals("일")) {
+			}else {
+				cnt++;
+				System.out.println(countDay + "(" + yoil + ")");
+				
+			}
+			if( (cnt * classTime) >= classTotalTime ) break;
+		}	
+		System.out.println("cnt : " + cnt);
+	}
 }
+

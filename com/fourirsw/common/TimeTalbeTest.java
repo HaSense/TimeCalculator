@@ -46,8 +46,6 @@ public class TimeTalbeTest {
 		yoil = time1.format(dtf);
 		System.out.println(yoil);
 
-
-
 		LocalDate startDay = LocalDate.of(2019, 1, 1);
 		LocalDate endDay = LocalDate.of(2019, 1, 8);
 
@@ -67,7 +65,6 @@ public class TimeTalbeTest {
 			}
 			if(countDay.equals(endDay) ) break;
 		}
-		System.out.println("cnt : " + cnt);	
+		System.out.println("cnt : " + cnt);
 	}
-
 }
